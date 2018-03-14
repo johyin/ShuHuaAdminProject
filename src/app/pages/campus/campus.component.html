@@ -1,0 +1,38 @@
+<div class="SH_wrapper campus_wrapper">
+
+    <div class="SH_top_nav_wrapper top_nav_wrapper">
+      <app-nav NavTitle='校区列表' NavIcon='icon-computer'></app-nav>
+      
+      <app-breadcrumb [breadcrumbData]='navData'></app-breadcrumb>
+    </div>
+    <div class="SH_container_wrapper container_wrapper">
+        <nz-tabset (nzSelectedIndexChange)='_nzSelectedIndexChange(nzSelectedIndex)' (nzSelectChange)='_nzSelectChange(nzSelectedIndex)'>
+          <nz-tab>
+            <ng-template #nzTabHeading>全部</ng-template>
+            <div class="container">
+              <app-campus-list [CampusList]='allcampusList'></app-campus-list>
+
+            </div>
+          </nz-tab>
+          <nz-tab>
+            <ng-template #nzTabHeading>总部</ng-template>
+            <div class="container">
+                <app-campus-list [CampusList]='allcampusList1'></app-campus-list>
+            </div>
+          </nz-tab>
+          <nz-tab>
+            <ng-template #nzTabHeading>直营校区</ng-template>
+            <div class="container">
+                <app-campus-list [CampusList]='allcampusList2'></app-campus-list>
+            </div>
+          </nz-tab>
+          <nz-tab>
+            <ng-template #nzTabHeading>加盟校区</ng-template>
+            <div class="container">
+              444444444444
+            </div>
+          </nz-tab>
+        </nz-tabset>
+      </div>
+
+</div>

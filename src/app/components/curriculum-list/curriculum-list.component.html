@@ -1,0 +1,47 @@
+<div class="SH_cont_top cont_top">
+    <a routerLink='/addcampus'>
+      <button nz-button [nzType]="'primary'">
+        <i class="anticon anticon-plus"></i>添加新的课程
+      </button>
+    </a>
+    <app-search></app-search>
+  </div>
+  <div class="SH_cont_wrapper cont_wrapper">
+    <div class="campus_list">
+      <nz-table #nzTable [nzDataSource]="CurriculumList" [nzPageSize]="10"  nzCustomNoResult='true'>
+        <thead nz-thead>
+          <tr>
+            <th nz-th><span>排序</span></th>
+            <th nz-th><span>分类</span></th>
+            <th nz-th><span>课程名称</span></th>
+            <th nz-th class="no_align"><span>课程描述</span></th>
+            <th nz-th><span>开课数量</span></th>
+            <th nz-th><span>操作</span></th>                        
+          </tr>
+        </thead>
+        <tbody nz-tbody>
+          <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+            <td nz-td>{{data.index}}</td>
+            <td nz-td>{{data.type}}</td>
+            <td nz-td>{{data.name}}</td>
+            <td nz-td class="no_align">{{data.desc}}</td>
+            <td nz-td>{{data.number}}</td>
+            <td nz-td>
+              <div class="operation">
+                11111111
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <div noResult class="initial_data">
+          <div class="position">
+            <i class="iconfont icon-computer"></i>
+          </div>
+          <h3>尚未添加任何课程</h3>
+          <p>课程是添加开课的基础条件</p>
+          <button nz-button [nzType]='"primary"' (click)='ToAdd()'>立即添加</button>
+        </div>
+      </nz-table>
+      
+    </div>
+  </div>

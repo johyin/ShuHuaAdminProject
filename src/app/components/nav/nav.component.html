@@ -1,0 +1,12 @@
+<div class="nav_part" [ngClass]='{"nav_back" : showNavBack}'>
+  <div class="top_nav_one">
+    <div class="back" onclick="javascript:history.back()">
+      <i class="iconfont icon-return"></i>
+      <span>返回</span>
+    </div>
+    <div class="title">
+        <i class="iconfont"  [ngClass]='NavIcon'></i>
+        <h2>{{NavTitle}}</h2>
+    </div>
+  </div>
+</div>

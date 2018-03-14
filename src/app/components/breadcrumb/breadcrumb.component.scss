@@ -1,0 +1,19 @@
+.breadcrumb_part{
+    display: flex;
+    font-size: 14px;
+    .ant_breadcrumb{
+        & > span:last-child{
+            & > a .iconfont{
+                display: none;
+            }
+        }
+        span > a{
+            font-size: 14px;
+            color: #838895;
+            &:hover{
+                color: #2a60ea;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,37 @@
+@import "~common/scss/variable.scss";
+:host ::ng-deep{
+    .search_wrapper{
+        margin-right: 2px;
+        & .ant-input:not(:first-child){
+            padding-left: 40px;
+        }
+        & .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled), & .ant-input:focus{
+            border-color: $color-theme;
+            box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2)
+        }
+        .ant-input-prefix{
+            left: 0;
+            display: block;
+            height: 36px;
+            width: 40px;
+            text-align: center;
+            line-height: 36px;
+            cursor: pointer;
+            i{
+                display: block;
+                line-height: 36px;
+                color: #838895;
+            }
+        }
+        .ant-input{
+            width: 252px;
+            padding-left: 40px;
+            height: 36px;
+            line-height: 36px;
+            color: #838895;
+            font-size: 14px;
+            border: none;
+            border-radius: 18px;
+        }
+    }
+}
