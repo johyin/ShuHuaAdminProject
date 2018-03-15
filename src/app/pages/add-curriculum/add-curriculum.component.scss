@@ -1,0 +1,153 @@
+
+.addcurriculum_wraper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    .top_nav_warpper{
+        height: 70px;
+        line-height: 70px;
+        flex: 0 0 70px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 0;
+    }
+    .container_warpper{
+        flex: 1;
+        height: 100%;
+        margin:26px 0;
+        position: relative;
+        background-color: #ffffff;
+        .container_title{
+            height: 36px;
+            line-height: 36px;
+            background-color: #fafafa;
+            text-align: center;
+            color: #838895;
+            font-size: 14px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .container{
+            padding: 20px 98px 0;
+            .con_item{
+                margin-bottom: 24px;
+                &.ant-form-item-with-help{
+                    margin-bottom: 0;
+                }
+                .con_lable{
+                    height: 52px;
+                    line-height: 52px;
+                    color: #353840;
+                    font-size: 14px;
+                    font-weight: bold;
+                    display: flex;
+                    justify-content: space-between;
+                    .title{
+                        .desc{
+                            color: #838895;
+                            margin-left: 10px;
+                            font-weight: initial;
+                        }
+                    }
+                }
+                .charge_wrapper{
+                    & .c_bottom{
+                        margin-bottom: 12px;
+                    }
+                    .warning .iconfont{
+                        font-size: 16px;
+                        color: #e15a56;
+                    }
+                    .charge_type{
+                        .ant-select-selection{
+                            color: #353840;
+                        }
+                    }
+                }
+
+                .c_button{
+                    .ant-btn{
+                        border: 1px solid #b4c9fe;
+                        background-color: #e8f0fd;
+                        color: #3f6ced;
+                    }
+                }
+            }
+            .btn_wrapper{
+                margin: 50px 0;
+                .ant-btn{
+                    height: 48px;
+                    line-height: 48px;
+                    padding: 0 50px;
+                    margin: 0 9px;
+                    font-size: 16px;
+                    &.reset{
+                        background-color: #ebeced;
+                        border-color: #ebeced;
+                        color: #838895;
+                    }
+                }
+            }
+        }
+
+    }
+}
+:host ::ng-deep{
+    
+    
+    .container_warpper{
+        .ant-input{
+            border: 1px solid #cbced6;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #838895;
+            text-indent: 16px;
+            &::-webkit-input-placeholder{
+                color: #838895;
+            }
+        }
+        .has-error{
+            & .ant-input{
+                border-color: #f04134;
+                &::-webkit-input-placeholder{
+                    color: #f04134;
+                }
+            }
+            & .ant-form-explain, & .ant-form-split{
+                margin-left: 20px;
+                height: 24px;
+                line-height: 24px;
+            }
+        }
+        .ant-input-number{
+            
+            &:focus, &:hover{
+                box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2);
+            }
+            width: 100%;
+            margin-right: 0;
+            border-color: #cbced6;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #838895;
+            .ant-input-number-input-wrap{
+                position: relative;
+                &:after{
+                    content: '课时';
+                    position: absolute;
+                    top: 6px;
+                    right: 25px;
+                }
+                .ant-input-number-input{
+                    padding-right: 56px;
+                    padding-left: 12px;
+                }
+            }
+        }
+
+
+
+    }
+}

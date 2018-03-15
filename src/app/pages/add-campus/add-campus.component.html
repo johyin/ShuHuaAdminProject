@@ -7,153 +7,168 @@
     <div class="container_warpper">
       <div class="container_title">添加新的校区</div>
       <div class="container">
-        <div nz-row [nzGutter]='52'>
-          <div nz-col [nzSpan]="12">
-            <div class="con_item">
-              <div class="con_lable">
-                <span class="title">校区名称</span>
-              </div>
-              <div class="con_input">
-                  <nz-input
-                    [(ngModel)]="inputValue"
-                    [nzPlaceHolder]="'请输入校区名称'"
-                    (ngModelChange)="_console($event)"
-                    [nzSize]="'large'"
-                    name='campusname'
-                  ></nz-input>
-              </div>
-            </div>
+        <form nz-form [nzLayout]="'vertical'" [formGroup]="validateForm" (ngSubmit)="_submitForm()">
+          <div nz-row [nzGutter]='52'>
+            <div nz-col [nzSpan]="12">
 
-            <div class="con_item">
-              <div class="con_lable">
-                <span class="title">校区分类</span>
-              </div>
-              <div class="con_input">
+              <!-- 校区名称 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">校区名称</span>
+                </div>
+                <div nz-form-control  class="con_input">
+                    <nz-input
+                      [nzPlaceHolder]="'请输入校区名称'"
+                      formControlName="campusName"
+                      [nzSize]="'large'"
+                    ></nz-input>
+                    <div nz-form-explain *ngIf="validateForm.controls.campusName.dirty&&validateForm.controls.campusName.hasError('required')">请输入校区名称！</div>
+                </div>
                 
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio-button [nzValue]="'A'">
-                    <div class="campus_sort"></div>
-                    <div class="sort_con">
-                        <i class="iconfont icon-home"></i>
-                        <span class="title">总部</span>
-                        <i class="iconfont icon-success_fill"></i>
-                    </div>
-                  </label>
-                  <label nz-radio-button [nzValue]="'B'">
-                    <div class="campus_sort"></div>
-                    <div class="sort_con">
-                        <i class="iconfont icon-socialfill"></i>
-                        <span class="title">直营校区</span>
-                        <i class="iconfont icon-success_fill"></i>
-                      </div>
-                  </label>
-                  <label nz-radio-button [nzValue]="'C'">
-                    <div class="campus_sort"></div>
-                    <div class="sort_con">
-                        <i class="iconfont icon-user"></i>
-                        <span class="title">加盟校区</span>
-                        <i class="iconfont icon-success_fill"></i>
-                      </div>
-                  </label>
-                </nz-radio-group>
               </div>
-            </div>
-            <div class="con_item">
-              <div class="con_lable">
-                <span class="title">校区地址</span>
-                <app-map></app-map>
-              </div>
-              <div class="con_input">
 
-                <div class="select_wrap">
+              <!-- 校区分类 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">校区分类</span>
+                </div>
+                <div nz-form-control class="con_input">
                   
-                  <div nz-row [nzGutter]='0'  [nzType]="'flex'">
-                    <nz-select [nzPlaceHolder]="'请选择'" nzAllowClear [nzSize]="'large'">
-                      <nz-option [nzLabel]="'jack'" [nzValue]="'Jack'"></nz-option>
-                      <nz-option [nzLabel]="'lucy'" [nzValue]="'Lack'"></nz-option>
-                      <nz-option [nzLabel]="'heihei'" [nzValue]="'Heihei'"></nz-option>
-                    </nz-select>
-                    <nz-select [nzPlaceHolder]="'请选择'" nzAllowClear [nzSize]="'large'">
-                      <nz-option [nzLabel]="'jack'" [nzValue]="'Jack'"></nz-option>
-                      <nz-option [nzLabel]="'lucy'" [nzValue]="'Lack'"></nz-option>
-                      <nz-option [nzLabel]="'heihei'" [nzValue]="'Heihei'"></nz-option>
-                    </nz-select>
-                    <nz-select [nzPlaceHolder]="'请选择'" nzAllowClear [nzSize]="'large'">
-                      <nz-option [nzLabel]="'jack'" [nzValue]="'Jack'"></nz-option>
-                      <nz-option [nzLabel]="'lucy'" [nzValue]="'Lack'"></nz-option>
-                      <nz-option [nzLabel]="'heihei'" [nzValue]="'Heihei'"></nz-option>
-                    </nz-select>
-                  </div>
-                  <div nz-row class="addres_four">
-                    <nz-input name='address' [nzPlaceHolder]="'请输入详细地址，需精确到门牌号'" [nzSize]="'large'"></nz-input>
-                  </div>
+                  <nz-radio-group formControlName="campusType">
+                    <label nz-radio-button [nzValue]="'A'">
+                      <div class="campus_sort"></div>
+                      <div class="sort_con">
+                          <i class="iconfont icon-home"></i>
+                          <span class="title">总部</span>
+                          <i class="iconfont icon-success_fill"></i>
+                      </div>
+                    </label>
+                    <label nz-radio-button [nzValue]="'B'">
+                      <div class="campus_sort"></div>
+                      <div class="sort_con">
+                          <i class="iconfont icon-socialfill"></i>
+                          <span class="title">直营校区</span>
+                          <i class="iconfont icon-success_fill"></i>
+                        </div>
+                    </label>
+                    <label nz-radio-button [nzValue]="'C'">
+                      <div class="campus_sort"></div>
+                      <div class="sort_con">
+                          <i class="iconfont icon-user"></i>
+                          <span class="title">加盟校区</span>
+                          <i class="iconfont icon-success_fill"></i>
+                        </div>
+                    </label>
+                  </nz-radio-group>
+
                 </div>
               </div>
-            </div>
-          </div>
-          <div nz-col [nzSpan]="12">
-            <div class="con_item">
-              <div class="con_lable">
-                <span class="title">联系方式</span>
-              </div>
-              <div class="con_input">
 
-                <div nz-row [nzGutter]='0'  [nzType]="'flex'" [nzJustify]="'space-between'">
-                  <div nz-col [nzSpan]="11">
-                    <nz-input name='phoneone' [nzPlaceHolder]="'联系电话 1'" [nzSize]="'large'"></nz-input>
-                  </div>
-                  <div nz-col [nzSpan]="12">
-                    <nz-input name='phonetwo' [nzPlaceHolder]="'联系电话 2'" [nzSize]="'large'"></nz-input>
-                  </div>
+              <!-- 校区地址 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">校区地址</span>
+                  <app-map></app-map>
                 </div>
-              </div>
-            </div>
-            <div class="con_item">
-              <div class="con_lable">
-                <span class="title">校区图片<span class="desc">({{fileList.length}}/6)</span></span>
-              </div>
-              <div class="con_input">
+                <div nz-form-control class="con_input">
 
-                  <div class="upload_img">
-                      <nz-upload
-                        nzAction="https://jsonplaceholder.typicode.com/posts/"
-                        nzListType="picture-card"
-                        [(nzFileList)]="fileList"
-                        [nzShowButton]="fileList.length < 6"
-                        [nzPreview]="handlePreview">
-                          <i class="anticon anticon-plus"></i>
-                          <div class="ant-upload-text">添加图片</div>
-                      </nz-upload>
-                      <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
-                        <ng-template #modalContent>
-                          <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
-                        </ng-template>
-                      </nz-modal>
+                  <div class="select_wrap">
+                    
+                    <div nz-row [nzGutter]='0'  [nzType]="'flex'">
+                      <nz-select [nzPlaceHolder]="'请选择'" nzAllowClear [nzSize]="'large'" formControlName="address_sheng">
+                        <nz-option [nzLabel]="'jack'" [nzValue]="'Jack'"></nz-option>
+                        <nz-option [nzLabel]="'lucy'" [nzValue]="'Lack'"></nz-option>
+                        <nz-option [nzLabel]="'heihei'" [nzValue]="'Heihei'"></nz-option>
+                      </nz-select>
+                      <nz-select [nzPlaceHolder]="'请选择'" nzAllowClear [nzSize]="'large'" formControlName="address_shi">
+                        <nz-option [nzLabel]="'jack'" [nzValue]="'Jack'"></nz-option>
+                        <nz-option [nzLabel]="'lucy'" [nzValue]="'Lack'"></nz-option>
+                        <nz-option [nzLabel]="'heihei'" [nzValue]="'Heihei'"></nz-option>
+                      </nz-select>
+                      <nz-select [nzPlaceHolder]="'请选择'" nzAllowClear [nzSize]="'large'" formControlName="address_qu">
+                        <nz-option [nzLabel]="'jack'" [nzValue]="'Jack'"></nz-option>
+                        <nz-option [nzLabel]="'lucy'" [nzValue]="'Lack'"></nz-option>
+                        <nz-option [nzLabel]="'heihei'" [nzValue]="'Heihei'"></nz-option>
+                      </nz-select>
                     </div>
+                    <div nz-row class="addres_four">
+                      <nz-input name='address' [nzPlaceHolder]="'请输入详细地址，需精确到门牌号'" [nzSize]="'large'" formControlName="address_desc"></nz-input>
+                      <div nz-form-explain *ngIf="validateForm.controls.address_desc.dirty&&validateForm.controls.address_desc.hasError('required')">请输入详细地址！</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div nz-col [nzSpan]="12">
 
+              <!-- 联系方式 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">联系方式</span>
+                </div>
+                <div nz-form-control class="con_input">
+
+                  <div nz-row [nzGutter]='0'  [nzType]="'flex'" [nzJustify]="'space-between'">
+                    <div nz-col [nzSpan]="11">
+                      <nz-input [nzPlaceHolder]="'联系电话 1'" [nzSize]="'large'" formControlName="telephoneOne"></nz-input>
+                      <div nz-form-explain *ngIf="validateForm.controls.telephoneOne.dirty&&validateForm.controls.telephoneOne.hasError('required')">请输入联系电话！</div>
+                    </div>
+                    <div nz-col [nzSpan]="12" class="no_color">
+                      <nz-input [nzPlaceHolder]="'联系电话 2'" [nzSize]="'large'" formControlName="telephoneTow"></nz-input>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 校区图片 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">校区图片<span class="desc">({{fileList.length}}/6)</span></span>
+                </div>
+                <div nz-form-control class="con_input">
+                    <div class="upload_img">
+                        <nz-upload
+                          nzAction="https://jsonplaceholder.typicode.com/posts/"
+                          nzListType="picture-card"
+                          [(nzFileList)]="fileList"
+                          [nzShowButton]="fileList.length < 6"
+                          [nzPreview]="handlePreview">
+                            <i class="anticon anticon-plus"></i>
+                            <div class="ant-upload-text">添加图片</div>
+                        </nz-upload>
+                        <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+                          <ng-template #modalContent>
+                            <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+                          </ng-template>
+                        </nz-modal>
+                      </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div nz-row>
+
+            <!-- 图文介绍 -->
+            <div nz-form-item class="con_item">
+              <div nz-form-label class="con_lable">
+                <span class="title">图文介绍</span>
+              </div>
+              <div nz-form-control class="con_input">
+                <ckeditor  formControlName="introduce" [(ngModel)]="ckeditorContent" debounce="500"></ckeditor>
+                输入的内容：<br> {{ ckeditorContent }}
               </div>
             </div>
           </div>
-        </div>
-        <div nz-row>
-          <div class="con_item">
-            <div class="con_lable">
-              <span class="title">图文介绍</span>
-            </div>
-            <div class="con_input">
-              <ckeditor [(ngModel)]="ckeditorContent" debounce="500"></ckeditor>
-              输入的内容：<br> {{ ckeditorContent }}
-            </div>
+          <div nz-row [nzType]="'flex'" [nzJustify]="'center'">
+              <div class="btn_wrapper">
+
+                <button nz-button [nzType]="'primary'"  [disabled]="!validateForm.valid">确认添加新校区</button>
+
+                <button class="reset" nz-button [nzType]="'primary'" (click)="resetForm($event)">全部重置</button>
+              </div>
           </div>
-        </div>
-        <div nz-row [nzType]="'flex'" [nzJustify]="'center'">
-            <div class="btn_wrapper">
-
-              <button nz-button [nzType]="'primary'">确认添加新校区</button>
-
-              <button class="reset" nz-button [nzType]="'primary'">全部重置</button>
-            </div>
-        </div>
+        </form>
       </div>
     </div>
 

@@ -24,6 +24,7 @@ import { MapComponent } from './components/map/map.component';
 import { CurriculumListComponent } from './components/curriculum-list/curriculum-list.component';
 import { CurriculumComponent } from './pages/curriculum/curriculum.component';
 import { ClassesComponent } from './pages/classes/classes.component';
+import { AddCurriculumComponent } from './pages/add-curriculum/add-curriculum.component';
 
 const routes: Routes = [
   {
@@ -34,12 +35,12 @@ const routes: Routes = [
   {
     path: 'campus',
     component: CampusComponent,
-    children: [
-      {
-        path: 'campuslist',
-        component: CampusListComponent
-      }
-    ]
+    // children: [
+    //   {
+    //     path: 'campuslist',
+    //     component: CampusListComponent
+    //   }
+    // ]
   },
   {
     path: 'addcampus',
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: 'curriculum',
     component: CurriculumComponent,
+  },
+  {
+    path: 'addcurriculum',
+    component: AddCurriculumComponent,
   },
   {
     path: 'classes',
@@ -78,7 +83,8 @@ const routes: Routes = [
     MapComponent,
     CurriculumListComponent,
     CurriculumComponent ,
-    ClassesComponent 
+    ClassesComponent,
+    AddCurriculumComponent 
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="SH_cont_top cont_top">
-    <a routerLink='/addcampus'>
+    <a routerLink='/addcurriculum'>
       <button nz-button [nzType]="'primary'">
         <i class="anticon anticon-plus"></i>添加新的课程
       </button>
@@ -7,7 +7,7 @@
     <app-search></app-search>
   </div>
   <div class="SH_cont_wrapper cont_wrapper">
-    <div class="campus_list">
+    <div class="curriculum_list">
       <nz-table #nzTable [nzDataSource]="CurriculumList" [nzPageSize]="10"  nzCustomNoResult='true'>
         <thead nz-thead>
           <tr>
@@ -28,7 +28,22 @@
             <td nz-td>{{data.number}}</td>
             <td nz-td>
               <div class="operation">
-                11111111
+                <!-- <i class="iconfont icon-other"></i>选项 -->
+                <nz-dropdown [nzPlacement]="'topCenter'">
+                  <div nz-dropdown class="oper"><i class="iconfont icon-other"></i>选项</div>
+                  <!-- <button nz-button nz-dropdown>选项</button> -->
+                  <ul nz-menu class="operation_ul">
+                    <li nz-menu-item class="sort">
+                      <i class="iconfont icon-rank"></i>排序
+                    </li>
+                    <li nz-menu-item  class="modify">
+                      <i class="iconfont icon-brush_fill"></i>修改
+                    </li>
+                    <li nz-menu-item class="del">
+                      <i class="iconfont icon-delete_fill"></i>删除
+                    </li>
+                  </ul>
+                </nz-dropdown>
               </div>
             </td>
           </tr>

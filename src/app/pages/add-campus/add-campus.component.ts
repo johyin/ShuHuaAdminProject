@@ -18,7 +18,6 @@ import {
 export class AddCampusComponent implements OnInit {
 
   private ckeditorContent = '';
-  private radioValue = 'A';
 
   // nav
   navData = [
@@ -52,15 +51,34 @@ export class AddCampusComponent implements OnInit {
 
 
   handlePreview = (file: UploadFile) => {
+    console.log(file);
     this.previewImage = file.url || file.thumbUrl;
     this.previewVisible = true;
   }
 
   
+  _submitForm(){
+    let data = this.validateForm.value;
+    console.log(data);
+  }
+  resetForm($event: MouseEvent) {
+    $event.preventDefault();
+    this.validateForm.reset();
+    for (const key in this.validateForm.controls) {
+      this.validateForm.controls[ key ].markAsPristine();
+    }
+  }
   ngOnInit() {
     this.validateForm = this.fb.group({
-      userName: [ null, [ Validators.required ] ],
-      select: [ 'one']
+      campusName: [ null, [ Validators.required ] ], 
+      campusType: [ 'A' ],
+      address_sheng: [ null, [ Validators.required ] ],
+      address_shi: [ null, [ Validators.required ] ],
+      address_qu: [ null, [ Validators.required ] ],
+      address_desc: [ null, [ Validators.required ] ],
+      telephoneOne: [ null, [ Validators.required ] ],
+      telephoneTow: [ null ],
+      introduce: [ null ],
     });
   }
 

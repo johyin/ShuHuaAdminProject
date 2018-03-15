@@ -175,3 +175,78 @@
             }
         }
     }
+
+
+    // 下拉菜单？
+
+    .ant-select{
+        &.ant-select-open{
+            .ant-select-selection{
+                &, &:focus, &:active ,&:hover{
+                    border-color: #cbced6;
+                    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+        .ant-select-selection{
+            
+            border: 1px solid #cbced6;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #838895;
+            &:focus, &:active ,&:hover{
+                border-color: #cbced6;
+                box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2);
+            }
+            
+            .ant-select-selection__rendered{
+                margin-left: 14px;
+            }
+            .ant-select-selection__clear{
+                right: 10px;
+            }
+
+            .ant-select-arrow:before{
+                content: ' ';
+                width: 0;
+                height: 0;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid #838a94;
+                margin-top: 2px;
+            }
+            .ant-select-selection__placeholder{
+                color: #838895;
+            }
+        }
+
+    }
+
+    .ant-select-dropdown{
+        .ant-select-dropdown-menu-item-active{
+            background-color: #fafafa;
+        }
+    }
+
+    // 图片上传
+            
+    nz-upload{
+        .ant-upload-list-picture-card .ant-upload-list-item{
+            width: 154px;
+            height: 92px;
+            padding: inherit;
+            .ant-upload-list-item-thumbnail img{
+                height: auto;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+            }
+        }
+        .ant-upload.ant-upload-select-picture-card{
+            width: 154px;
+            height: 92px;
+            padding: inherit;
+        }
+    }
