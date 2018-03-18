@@ -248,6 +248,7 @@ export class CurriculumComponent implements OnInit {
       number: '4252'
     }
   ]
+  DataList1 = []
   navData = [
     {
       title: '课程管理',

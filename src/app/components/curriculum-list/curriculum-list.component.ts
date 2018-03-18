@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-curriculum-list',
@@ -7,11 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CurriculumListComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router ) { }
   @Input() CurriculumList:any = {};
   ngOnInit() {
   }
   ToAdd(){
-    console.log(11111111);
+    this.router.navigate(['/addcurriculum'])
   }
 }

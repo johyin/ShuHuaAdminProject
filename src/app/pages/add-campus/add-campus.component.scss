@@ -32,8 +32,11 @@
         .container{
             padding: 20px 98px 0;
             .con_item{
+                margin-bottom: 24px;
+                &.ant-form-item-with-help{
+                    margin-bottom: 0;
+                }
                 .con_lable{
-                    margin-top: 18px;
                     height: 52px;
                     line-height: 52px;
                     color: #353840;
@@ -50,6 +53,10 @@
                     }
                 }
                 .con_input{
+                    & .ant-form-item-control{
+
+                        height: 102px;
+                    }
                     .ant-radio-group{
                         display: flex;
                         justify-content: center;
@@ -141,7 +148,6 @@
                     padding: 0 50px;
                     margin: 0 9px;
                     font-size: 16px;
-                    background-color: #1bb413;
                     &.reset{
                         background-color: #ebeced;
                         border-color: #ebeced;
@@ -157,7 +163,7 @@
     
 
     .container_warpper{
-        .ant-input, .ant-select-selection{
+        .ant-input{
             border: 1px solid #cbced6;
             border-radius: 4px;
             font-size: 14px;
@@ -169,30 +175,26 @@
                 color: #838895;
             }
         }
-        .ant-select-selection{
-            .ant-select-selection__placeholder{
-                color: #838895;
-            }
-        }
-        nz-upload{
-
-            .ant-upload-list-picture-card .ant-upload-list-item{
-                width: 154px;
-                height: 92px;
-                padding: inherit;
-                .ant-upload-list-item-thumbnail img{
-                    height: auto;
-                    width: 100%;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    left: 0;
+        .has-error{
+            & .ant-input{
+                border-color: #f04134;
+                &::-webkit-input-placeholder{
+                    color: #f04134;
                 }
             }
-            .ant-upload.ant-upload-select-picture-card{
-                width: 154px;
-                height: 92px;
-                padding: inherit;
+            & .ant-form-explain, & .ant-form-split{
+                margin-left: 20px;
+                height: 24px;
+                line-height: 24px;
+            }
+            .no_color{
+                .ant-input{
+                    border-color: #cbced6;
+                    &::-webkit-input-placeholder{
+                        color: #838895;
+                    }
+                    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2);
+                }
             }
         }
     }

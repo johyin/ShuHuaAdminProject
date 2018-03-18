@@ -1,0 +1,159 @@
+<div class="addcurriculum_wraper">
+    <div class="top_nav_warpper">
+
+      <app-nav NavBack='back' NavTitle='添加新的课程' NavIcon='icon-computer'></app-nav>
+      <app-breadcrumb [breadcrumbData]='navData'></app-breadcrumb>
+    </div>
+    <div class="container_warpper">
+      <div class="container_title">添加新的课程</div>
+      <div class="container">
+        <form nz-form [nzLayout]="'vertical'" [formGroup]="validateForm" (ngSubmit)="_submitForm()">
+          <div nz-row [nzGutter]='52'>
+            <div nz-col [nzSpan]="12">
+
+              <!-- 课程名称 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">课程名称</span>
+                </div>
+                <div nz-form-control  class="con_input">
+                  <div nz-row [nzType]="'flex'" [nzJustify]="'space-between'">
+                    <div nz-col [nzSpan]="6">
+                      <nz-select [nzPlaceHolder]="'请选择分类'" nzAllowClear [nzSize]="'large'" formControlName="curriculum_type">
+                        <nz-option [nzLabel]="'通识教育课'" [nzValue]="'1'"></nz-option>
+                        <nz-option [nzLabel]="'学科基础课'" [nzValue]="'2'"></nz-option>
+                        <nz-option [nzLabel]="'专业必修课'" [nzValue]="'3'"></nz-option>
+                        <nz-option [nzLabel]="'专业选修课'" [nzValue]="'4'"></nz-option>
+                        <nz-option [nzLabel]="'任意选修课'" [nzValue]="'5'"></nz-option>
+                        <nz-option [nzLabel]="'实践教学课'" [nzValue]="'6'"></nz-option>
+                      </nz-select>
+                    </div>
+                    <div nz-col [nzSpan]="17">
+                      <nz-input
+                        [nzPlaceHolder]="'请输入课程名称'"
+                        formControlName="curriculumName"
+                        [nzSize]="'large'"
+                      ></nz-input>
+                      <div nz-form-explain *ngIf="validateForm.controls.curriculumName.dirty&&validateForm.controls.curriculumName.hasError('required')">请输入课程名称！</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 课程收费标准 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">课程收费标准</span>
+                </div>
+                <div nz-form-control  class="con_input" class="charge_wrapper">
+                    <div nz-row [nzType]="'flex'" [nzJustify]="'space-between'"  [nzGutter]="14" class="c_bottom">
+                      <div nz-col [nzSpan]='1' class="warning"><i class="iconfont icon-offline_fill"></i></div>
+                      <div nz-col [nzSpan]='6' class="charge_type">
+                        <nz-select [nzPlaceHolder]="'按期收费'" nzAllowClear [nzSize]="'large'" formControlName="charge_stage_type">
+                          <nz-option [nzLabel]="'一期'" [nzValue]="'1'"></nz-option>
+                          <nz-option [nzLabel]="'二期'" [nzValue]="'2'"></nz-option>
+                          <nz-option [nzLabel]="'三期'" [nzValue]="'3'"></nz-option>
+                          <nz-option [nzLabel]="'四期'" [nzValue]="'4'"></nz-option>
+                        </nz-select>
+                      </div>
+                      <div nz-col [nzSpan]='6' class="period">
+                          <nz-input-number formControlName="period" [nzSize]='"large"' [nzMin]="0" [nzStep]="1"></nz-input-number>
+                      </div>
+                      <div nz-col [nzSpan]='8'>
+                          <nz-input
+                            [nzPlaceHolder]="'请输入价格'"
+                            formControlName="curriculumPrice"
+                            [nzSize]="'large'"
+                          ></nz-input>
+                      </div>
+                      <div nz-col [nzSpan]='3' class="c_button">
+                        <button nz-button>添加</button>
+                      </div>
+                    </div>
+                    <div nz-row [nzType]="'flex'" [nzJustify]="'space-between'"  [nzGutter]="14">
+                      <div nz-col [nzSpan]='1' class="warning"><i class="iconfont icon-offline_fill"></i></div>
+                      <div nz-col [nzSpan]='6' class="charge_type">
+                        <nz-select [nzPlaceHolder]="'按年收费'" nzAllowClear [nzSize]="'large'" formControlName="charge_year_type">
+                          <nz-option [nzLabel]="'一年'" [nzValue]="'1'"></nz-option>
+                          <nz-option [nzLabel]="'二年'" [nzValue]="'2'"></nz-option>
+                          <nz-option [nzLabel]="'三年'" [nzValue]="'3'"></nz-option>
+                        </nz-select>
+                      </div>
+                      <div nz-col [nzSpan]='14'>
+                          <nz-input
+                            [nzPlaceHolder]="'请输入价格'"
+                            formControlName="curriculumPrice"
+                            [nzSize]="'large'"
+                          ></nz-input>
+                      </div>
+                      <div nz-col [nzSpan]='3'></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div nz-col [nzSpan]="12">
+              <!-- 简要描述 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">简要描述</span>
+                </div>
+                <div nz-form-control  class="con_input">
+                    <nz-input
+                      [nzPlaceHolder]="'请输入简要描述'"
+                      formControlName="desc"
+                      [nzSize]="'large'"
+                    ></nz-input>
+                    <div nz-form-explain *ngIf="validateForm.controls.desc.dirty&&validateForm.controls.desc.hasError('required')">请输入简要描述！</div>
+                </div>
+              </div>
+              <!-- 课程图片 -->
+              <div nz-form-item class="con_item">
+                <div nz-form-label class="con_lable">
+                  <span class="title">课程图片<span class="desc">({{fileList.length}}/6)</span></span>
+                </div>
+                <div nz-form-control class="con_input">
+                    <div class="upload_img">
+                      <nz-upload
+                        nzAction="https://jsonplaceholder.typicode.com/posts/"
+                        nzListType="picture-card"
+                        [(nzFileList)]="fileList"
+                        [nzShowButton]="fileList.length < 6"
+                        [nzPreview]="handlePreview">
+                          <i class="anticon anticon-plus"></i>
+                          <div class="ant-upload-text">添加图片</div>
+                      </nz-upload>
+                      <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+                        <ng-template #modalContent>
+                          <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+                        </ng-template>
+                      </nz-modal>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div nz-row>
+            <!-- 图文介绍 -->
+            <div nz-form-item class="con_item">
+              <div nz-form-label class="con_lable">
+                <span class="title">图文介绍</span>
+              </div>
+              <div nz-form-control class="con_input">
+                <ckeditor  formControlName="introduce" [(ngModel)]="ckeditorContent" debounce="500"></ckeditor>
+                输入的内容：<br> {{ ckeditorContent }}
+              </div>
+            </div>
+          </div>
+          <div nz-row [nzType]="'flex'" [nzJustify]="'center'">
+              <div class="btn_wrapper">
+
+                <button nz-button [nzType]="'primary'"  [disabled]="!validateForm.valid">确认添加新课程</button>
+
+                <button class="reset" nz-button [nzType]="'primary'" (click)="resetForm($event)">全部重置</button>
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+</div>
