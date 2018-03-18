@@ -1,0 +1,101 @@
+.login_wrapper{
+    background-color: #ebecee;
+    height: 100%;
+    min-height: 454px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    .login_container{
+        width: 804px;
+        height: 400px;
+        min-height: 400px;
+        background-color: #fff;
+        display: flex;
+        
+        .login_left{
+            flex: 0 0 270px;
+            padding: 37px;
+            h1{
+                line-height: 1;
+                margin-top: 6px;
+                margin-bottom: 40px;
+            }
+            .ant-form-item{
+                margin-bottom: 16px;
+                position: relative;
+                &.remember{
+                    line-height: 24px;
+                    margin-bottom: 30px;
+                    
+                }
+                .ant-form-explain{
+                    position: absolute;
+                    top: 0;
+                    line-height: 1;
+                    right: 0;
+                }
+            }
+            form > .ant-btn{
+                width: 100%;
+                line-height: 42px;
+                height: 42px;
+                border-radius: 2px;
+                letter-spacing: 2px;
+            }
+        }
+        .login_right{
+            flex: 1;
+            position: relative;
+            .login_title{
+                position: absolute;
+                bottom: 44px;
+                left: 40px;
+                color: #fff;
+                & > h2{
+                    font-size: 32px;
+                    color: #fff;
+                    font-weight: 100;
+                    letter-spacing: 2px;
+                }
+                & > p{
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+    .login_footer{
+        line-height: 1;
+        margin-top: 42px;
+        color: #8a919b;
+    }
+}
+
+:host ::ng-deep .login_left{
+    .ant-form-item-label{
+        line-height: 1;
+        margin-bottom: 10px;
+        label{
+            font-weight: bold;
+            &:after{
+                content: '';
+            }
+        }
+    }
+    .ant-form-item-control{
+        position: initial;
+        .ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner{
+            background-color: #1bb413;
+            border-color: #1bb413;
+        }
+        .ant-input{
+            height: 34px;
+            line-height: 34px;
+            text-indent: 16px;
+            border-radius: 2px;
+        }
+    }
+}
+

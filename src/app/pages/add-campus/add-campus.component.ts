@@ -47,6 +47,39 @@ export class AddCampusComponent implements OnInit {
   previewImage = '';
   previewVisible = false;
   
+  config = {
+
+    // 默认
+    // { name: 'document',     items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },  
+    // { name: 'clipboard',    items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },  
+    // { name: 'editing',      items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },  
+    // { name: 'forms',        items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },  
+    // '/',  
+    // { name: 'basicstyles',  items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },  
+    // { name: 'paragraph',    items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },  
+    // { name: 'links',        items : [ 'Link','Unlink','Anchor' ] },  
+    // { name: 'insert',       items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },  
+    // '/',  
+    // { name: 'styles',       items : [ 'Styles','Format','Font','FontSize' ] },  
+    // { name: 'colors',       items : [ 'TextColor','BGColor' ] },  
+    // { name: 'tools',        items : [ 'Maximize', 'ShowBlocks','-','About' ] }  
+    // removeButtons: 'Underline,JustifyCenter',
+
+    toolbar: [
+    { name: 'document',     items : [ 'Source', 'Templates' ] }, 
+    { name: 'basicstyles',  items : [ 'Bold','Italic','Underline','Strike','-','RemoveFormat' ] },  
+    { name: 'paragraph',    items : [ 'NumberedList','BulletedList','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },  
+    { name: 'links',        items : [ 'Link','Unlink' ] },
+    { name: 'insert',       items : [ 'Image','Table','HorizontalRule','SpecialChar','PageBreak' ] },  
+    '/',
+    { name: 'styles',       items : [ 'Styles','Format','FontSize' ] },  
+    { name: 'colors',       items : [ 'TextColor','BGColor' ] },  
+    { name: 'tools',        items : [ 'Maximize', 'ShowBlocks' ] }
+    ],
+
+    filebrowserBrowseUrl: '&&&&&', 
+    filebrowserUploadUrl: '&&&'  
+  }
 
   constructor(private fb: FormBuilder) {}
 
