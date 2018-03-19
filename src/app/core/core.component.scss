@@ -1,0 +1,158 @@
+
+
+
+
+
+
+
+:host ::ng-deep{
+    & .ant-layout{
+        background-color: #ebeced;
+    }
+    .ant-layout.ant-layout-has-sider{
+        min-height: 100%;
+        .ant-layout-sider{
+            background-color: #ffffff;
+            box-shadow: 0px 0px 2px 0px rgba(146, 146, 146, 0.5);
+            z-index: 99;
+            width: 240px;
+            &.ant-layout-sider-collapsed .nav-text {
+                display: none;
+            }
+            &.ant-layout-sider-collapsed .ant-menu-submenu-title:after {
+                display: none;
+            }
+            &.ant-layout-sider-collapsed .ant-menu > div .iconfont {
+                font-size: 22px;
+                margin-right: 0;
+                margin-left: 4px;
+            }
+            .logo {
+                height: 90px;
+                line-height: 90px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                background-color: #2656d2;
+                color: #ffffff;
+                flex-wrap: wrap;
+                overflow: hidden;
+                h1{
+                    color: #ffffff;
+                    font-size: 16px;
+                }
+                i.trigger{
+                    line-height: 90px;
+                    font-size: 18px;
+                    padding: 0 20px;
+                    cursor: pointer;
+                    transition: color .3s;
+                }
+            }
+            .ant-menu{
+                border: none;
+                font-size: 16px;
+                color: #333;
+                & ul.ant-menu-vertical ul{
+                    background-color: #fff;
+                    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+                }
+                & a:hover,& .ant-menu-item-selected > a{
+                    color: #2a60ea;
+                }
+                & > div{
+                    margin-right: 1px;
+                    .ant-menu-inline{
+                        .ant-menu-item{
+                            padding: 0 0 0 26px;
+                            margin: 0 24px;
+                            border: 1px solid transparent;
+                            height: 36px;
+                            line-height: 36px;
+                            &.ant-menu-item-selected{
+                                background: transparent;
+                                color: #2a60ea;
+                                border-color: #ebeced;
+                                background-color: #f9fafc;
+                            }
+                        }
+                    }
+    
+                    .iconfont{
+                        margin-right: 16px;
+                        font-size: 20px;
+                        vertical-align: sub;
+                        color: #9298a3;
+                    }
+                }
+                & .ant-menu-item:hover,&  .ant-menu-item-active,&  .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,&  .ant-menu-submenu-active,&  .ant-menu-submenu-title:hover,.ant-menu-item-selected{
+                    color: #2a60ea;
+                    .iconfont{
+                        color: #2a60ea;                        
+                    }
+                }
+                .ant-menu-item{
+                    position: relative;
+                    .ant-menu-sub{
+                        color: #838895;
+                    }
+                    
+                    &.ant-menu-item-selected{
+                        background: transparent;
+                        color: #2a60ea;
+                        border-color: #ebeced;
+                        background-color: #f9fafc;
+                    }
+                    &:after{
+                        height: 0;
+                    }
+                }
+            }
+        }
+        .ant-layout-content{
+            display: flex;
+            flex-direction: column;
+            margin: 0 22px;
+            overflow: hidden;
+            flex: 1;
+            & > .ng-star-inserted{
+                height: 100%;
+            }
+        }
+    }
+
+
+    // tab port
+    nz-tabset{
+        height: 100%;
+        &,& .ant-tabs, & .ant-tabs-nav-container, & .ant-tabs-nav-wrap, & .ant-tabs-nav-scroll{
+            overflow: initial;
+        }
+        .ant-tabs-bar{
+            margin: 0;
+            height: 70px;
+            border: none;
+            position: absolute;
+            top: -96px;
+            left: 148px;
+            padding-left: 20px;
+            .ant-tabs-nav{
+                .ant-tabs-ink-bar{
+                    bottom: 0;
+                    height: 3px;
+                    background: #2a60ea;
+                }
+                .ant-tabs-tab{
+                    padding: 0;
+                    margin: 0 20px;
+                    height: 70px;
+                    line-height: 70px;
+                    &.ant-tabs-tab-active, &:hover{
+                        color: #2a60ea;
+                    }
+                }
+            }
+        }
+    }
+    
+}

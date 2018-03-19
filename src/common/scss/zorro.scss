@@ -1,4 +1,7 @@
 
+
+
+
     // table port
     .ant-table-wrapper{
 
@@ -157,6 +160,8 @@
     
     .ant-modal{
     
+        top: 50%;
+        transform: translateY(-50%);
         .ant-modal-content{
             border-radius: 0;
             & .ant-modal-header ,& .ant-modal-header .ant-modal-title{
@@ -169,6 +174,33 @@
             }
             .ant-modal-body{
                 padding: 0;
+                .type_one{
+                    text-align: center;
+                    .desc{
+                        margin-top: 32px;
+                        margin-bottom: 30px;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                    .ant-btn{
+                        padding: 0 36px;
+                        height: 36px;
+                        line-height: 36px;
+                        margin-bottom: 22px;
+                        border-radius: 2px;
+                    }
+                }
+                .type_two{
+                    padding: 30px;
+                    .ant-btn{
+                        border: none;
+                        border-radius: 0;
+                        &.cancel{
+                            background-color: #ebecee;
+                            color: #838895;
+                        }
+                    }
+                }
             }
             .ant-modal-footer{
                 display: none;
@@ -227,6 +259,20 @@
             background-color: #fafafa;
         }
     }
+
+    // 多选项
+    .checkbox_group_wrapper{
+        .ant-checkbox-wrapper{
+            padding: 4px 10px;
+            &:hover{
+                background-color: #ecf6fd;
+            }
+            & + .ant-checkbox-wrapper{
+                margin-left: 0px;
+            }
+        }
+    }
+
 
     // 图片上传
             

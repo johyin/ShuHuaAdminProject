@@ -1,0 +1,73 @@
+
+  <div class="SH_cont_wrapper cont_wrapper">
+    <div class="classes_list">
+      <nz-table #nzTable [nzDataSource]="ClassesList" [nzPageSize]="10"  nzCustomNoResult='true'>
+        <thead nz-thead>
+          <tr>
+              
+            <th nz-th nzCheckbox>
+              <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)"></label>
+            </th>
+
+            <th nz-th><span>标记</span></th>
+            <th nz-th><span>分类</span></th>
+            <th nz-th class="no_align"><span>班级名称</span></th>
+            <th nz-th><span>人数</span></th>
+            <th nz-th><span>满班率</span></th>
+            <th nz-th class="no_align"><span>所属课程</span></th>
+            <th nz-th><span>开班校区</span></th>
+            <th nz-th><span>开班日期</span></th>
+            <th nz-th><span>招生状态</span></th>
+            <th nz-th><span>操作</span></th>                        
+          </tr>
+        </thead>
+        <tbody nz-tbody>
+          <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+            <td nz-td nzCheckbox>
+              <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)"></label>
+            </td>
+            <td nz-td><nz-switch [nzSize]="'small'" [ngModel]="data.sign"></nz-switch></td>
+            <td nz-td>{{data.type}}</td>
+            <td nz-td class="no_align classes_name"><span>{{data.className}}</span></td>
+            <td nz-td>
+              <div class="percentile">
+                  <div>{{data.count}}/{{data.number}}</div>
+                  <div class="bar">
+                    <span [ngStyle]='{"width": _CalculationRatio(data)}'></span>
+                  </div>
+              </div>
+            </td>
+            <td nz-td [innerHtml]="_CalculationRatio(data)"></td>
+            <td nz-td  class="no_align belong_name"><span>{{data.belongName}}</span></td>
+            <td nz-td>{{data.campusName}}</td>
+            <td nz-td>{{data.time}}</td>
+            <td nz-td>
+              <div *ngIf="data.enrollState == 0" class="enroll_state active">开发招生</div>
+              <div *ngIf="data.enrollState == 1" class="enroll_state">停止招生</div>
+            </td>
+            <td nz-td>
+              <div class="operation">
+                <nz-dropdown [nzPlacement]="'bottomCenter'">
+                  <div nz-dropdown class="oper"><i class="iconfont icon-other"></i>选项</div>
+                  <ul nz-menu class="operation_ul">
+                      <li nz-menu-item class="sort" >排序设置</li>
+                      <li nz-menu-item  class="modify">编辑班级</li>
+                      <li nz-menu-item class="del">删除班级</li>
+                  </ul>
+                </nz-dropdown>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <div noResult class="initial_data">
+          <div class="position">
+            <i class="iconfont icon-computer"></i>
+          </div>
+          <h3>尚未添加任何课程</h3>
+          <p>课程是添加开课的基础条件</p>
+          <button nz-button [nzType]='"primary"' (click)='ToAdd()'>立即添加</button>
+        </div>
+      </nz-table>
+      
+    </div>
+  </div>

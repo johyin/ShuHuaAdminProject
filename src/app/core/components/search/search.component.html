@@ -1,0 +1,9 @@
+<div class="search_wrapper">
+  <form action="">
+    <nz-input [nzType]="'text'" [nzPlaceHolder]="'请输入搜索内容'" [(ngModel)]='searchcont' name='search'>
+        <ng-template #prefix>
+          <i class="anticon anticon-search" (click)='searchBtn()'></i>
+        </ng-template>
+      </nz-input>
+  </form>
+</div>

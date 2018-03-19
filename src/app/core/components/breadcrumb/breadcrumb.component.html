@@ -1,0 +1,8 @@
+<div class="breadcrumb_part">
+    <span>当前位置：</span>
+    <div class="ant_breadcrumb">
+      <span class="ant_breadcrumb_item" *ngFor="let item of breadcrumbData">
+        <a [routerLink]='item.url'>{{item.title}}<i class="iconfont icon-enter"></i></a>
+      </span>
+    </div>
+  </div>

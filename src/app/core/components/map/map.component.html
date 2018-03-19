@@ -1,0 +1,37 @@
+<div class="map_wrapper">
+  <div class="opermap"  (click)="showModalForTemplate(mapTitle, mapContent)"><i class="iconfont icon-coordinates_fill"></i>拾取地图坐标</div>
+  <ng-template #mapTitle>
+    <span>拾取地图坐标</span>
+  </ng-template>
+  <ng-template #mapContent>
+    <div class="operation">
+
+        <form nz-form [nzLayout]="inline" >
+            <div nz-form-item nz-row>
+              <div nz-form-label nz-col>
+                <label>搜索</label>
+              </div>
+              <div nz-form-control nz-col>
+                <nz-input [nzPlaceHolder]="'请输入地点'" [nzSize]="'large'"></nz-input>
+              </div>
+            </div>
+            <div nz-form-item nz-row>
+              <div nz-form-label nz-col>
+                <label>拾取坐标</label>
+              </div>
+              <div nz-form-control nz-col>
+                <nz-input [nzPlaceHolder]="'请通过坐标拾取获取'" [nzSize]="'large'" [(ngModel)]="coordinate"></nz-input>
+              </div>
+            </div>
+            <div>
+              <button (ngSubmit)="submitForm()">保存坐标</button>
+            </div>
+          </form>
+
+
+    </div>
+    <div class="map_container">
+        <baidu-map [options]="options"  (clicked)="getMapCoordinate($event)" style="display: block; width: 688px;height: 400px;"></baidu-map>
+    </div>
+  </ng-template>
+</div>

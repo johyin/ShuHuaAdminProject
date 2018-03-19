@@ -1,0 +1,52 @@
+<div class="SH_cont_top cont_top">
+  <a routerLink='/core/addcampus'>
+    <button nz-button [nzType]="'primary'">
+      <i class="anticon anticon-plus"></i>添加新校区
+    </button>
+  </a>
+  <app-search></app-search>
+</div>
+<div class="SH_cont_wrapper cont_wrapper">
+  <div class="campus_list">
+    <nz-table #nzTable [nzDataSource]="CampusList" [nzPageSize]="10"  nzCustomNoResult='true'>
+      <thead nz-thead>
+        <tr>
+          <th nz-th><span>排序</span></th>
+          <th nz-th><span>校区类型</span></th>
+          <th nz-th><span>校区名称</span></th>
+          <th nz-th class="no_align"><span>联系方式1</span></th>
+          <th nz-th class="no_align"><span>联系方式2</span></th>
+          <th nz-th class="no_align"><span>地址</span></th>
+          <th nz-th><span>操作</span></th>                        
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+          <td nz-td>{{data.index}}</td>
+          <td nz-td>{{data.campusType}}</td>
+          <td nz-td>{{data.campusName}}</td>
+          <td nz-td class="no_align">{{data.contactOne}}</td>
+          <td nz-td class="no_align">{{data.contactTwo}}</td>
+          <td nz-td class="no_align">{{data.address}}</td>
+          <td nz-td>
+            <div class="operation">
+              <span class="sort"><i class="iconfont icon-rank"></i>排序</span>
+              <span class="modify"><i class="iconfont icon-brush_fill"></i>修改</span>
+              <span class="del"><i class="iconfont icon-delete_fill"></i>删除</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <div noResult class="initial_data">
+        <div class="position">
+          <i class="iconfont icon-computer"></i>
+        </div>
+        <h3>尚未添加任何校区</h3>
+        <p>校区信息是后续功能正常使用的基础</p>
+        <button nz-button [nzType]='"primary"' (click)='ToAddCampus()'>立即添加</button>
+      </div>
+    </nz-table>
+
+
+  </div>
+</div>

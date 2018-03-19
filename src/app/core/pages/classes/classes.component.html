@@ -1,0 +1,84 @@
+<div class="SH_wrapper">
+
+    <div class="SH_top_nav_wrapper top_nav_wrapper">
+      <app-nav NavTitle='班级管理' NavIcon='icon-computer'></app-nav>
+      
+      <app-breadcrumb [breadcrumbData]='navData'></app-breadcrumb>
+    </div>
+    <div class="SH_container_wrapper container_wrapper">
+      <nz-tabset>
+        <nz-tab>
+          <ng-template #nzTabHeading>全部开课</ng-template>
+          <div class="container">
+              <div class="SH_cont_top cont_top">
+                <a routerLink='/core/addclasses'>
+                  <button nz-button [nzType]="'primary'">
+                    <i class="anticon anticon-plus"></i>课设新的班级
+                  </button>
+                </a>
+                <app-search></app-search>
+              </div>
+              <div class="SH_cont_wrapper cont_wrapper">
+
+                <div class="screen_wrapper">
+                  
+                </div>
+                <div class="handle_bar_wrapper">
+                  <div class="handle_bar_container">
+                    <ul class="handle_left">
+                      <li class="h_item">
+                        <i class="iconfont icon-empty_fill"></i>
+                        <span>批量删除选中项</span>
+                        <i class="mark"></i>
+                      </li>
+                      <li class="h_item">
+                        <i class="iconfont icon-offline_fill"></i>
+                        <span>清除当前页所有标记</span>
+                        <i class="mark"></i>
+                      </li>
+                      <li class="h_item">
+                              <nz-dropdown [nzPlacement]="'bottomCenter'" [nzClickHide]='false'>
+                                <div nz-dropdown class="oper">
+                                  <i class="iconfont icon-browse_fill"></i>
+                                  <span>自定义显示项</span>
+                                  <i class="arrowDown"></i>
+                                </div>
+                                <div  nz-menu class="checkbox_group_wrapper costom_wrapper" [nzClickActive]='false'>
+                                    <label nz-checkbox [(ngModel)]="AllCostom" (ngModelChange)="updateAllChecked()" [nzIndeterminate]="indeterminate">
+                                      <span>全选</span>
+                                    </label>
+                                    <nz-checkbox-group [(ngModel)]="costomItem" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>
+                                    <div class="confirm_btn">
+                                        <button nz-button>确定</button>
+                                    </div>
+                                </div>
+                                <!-- <ul nz-menu class="operation_ul" [nzClickActive]='false'>
+                                    <li nz-menu-item>
+                                        <label nz-checkbox [(ngModel)]="AllCostom" (ngModelChange)="updateAllChecked()" [nzIndeterminate]="indeterminate">
+                                          <span>Check all</span>
+                                        </label>
+                                    </li>
+                                    <li nz-menu-item>
+                                      <nz-checkbox-group [(ngModel)]="costomItem" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>
+                                    </li>
+                                    <li><button nz-button>确定</button></li>
+                                </ul> -->
+                                
+                              </nz-dropdown>
+                      </li>
+                    </ul>
+                    <div class="handle_right">
+                      <div>当前结果：共计<span>7897</span>个班级，<span>4171</span>名在读学员，报班<span>6413</span>人次（不包括退转停结课的学员）</div>
+                    </div>
+                  </div>
+                </div>
+                <app-classes-list [ClassesList]='classesData'></app-classes-list>
+              </div>
+            
+
+          </div>
+        </nz-tab>
+      </nz-tabset>
+    </div>
+
+</div>

@@ -1,0 +1,51 @@
+:host ::ng-deep{
+
+    .cont_wrapper{
+        .campus_list{
+
+            .operation{
+                display: flex;
+                justify-content: center;
+                & > span{
+                    padding:0 16px;
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    .iconfont{
+                        margin-right: 10px;
+                        font-size: 18px;
+                    }
+                }
+                & .modify{
+                    position: relative;
+                    &:after, &:before{
+                        content: '';
+                        height: 50%;
+                        width: 1px;
+                        position: absolute;
+                        background-color: #e5e7e7;
+                        
+                    }
+                    &:after{
+                        right: 0;
+                    }
+                    &:before{
+                        left: 0;
+                    }
+                }
+                .sort, .sort i{
+                    color: #838895;
+                }
+                .modify, .modify > i{
+                    color: #2a60ea;
+                }
+                .del, .del > i{
+                    color: #e25a5a;
+                }
+
+            }
+        }
+        
+    }
+}

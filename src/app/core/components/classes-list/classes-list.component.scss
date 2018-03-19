@@ -1,0 +1,79 @@
+:host ::ng-deep{
+    .ant-table-wrapper{
+        .ant-table-content{
+            .ant-table-body .ant-table-thead > tr > th,.ant-table-body .ant-table-tbody > tr > td{
+                padding: 18px 20px;
+            }
+        }
+    }
+    .cont_wrapper{
+        .classes_list{
+            .classes_name, .belong_name{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 200px;
+            }
+            
+            .oper{
+                cursor: pointer;
+                .iconfont{
+                    font-size: 16px;
+                    margin-right: 8px;
+                    line-height: 1;
+                    font-weight: bold;
+                }
+            }
+            .percentile{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .bar{
+                    height: 5px;
+                    background-color: #d9dadc;
+                    width: 46px;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    & > span{
+                        height: 5px;
+                        background-color: #1cb414;
+                        display: block;
+                        width: 0;
+                    }
+                }
+            }
+            .enroll_state{
+                width: 68px;
+                height: 20px;
+                line-height: 20px;
+                margin: 0 auto;
+                border:1px solid #838895;
+                color: #838895;
+                font-size: 14px;
+                border-radius: 2px;
+                &.active{
+                    border-color: #1bb413;
+                    background-color: #e8f7e7;
+                    color: #1bb413;
+                }
+            }
+        }
+        
+    }
+}
+.operation_ul{
+    border-radius: 0;
+    .ant-dropdown-menu-item{
+        padding: 10px 18px;
+        border-bottom: 1px solid #e6e6e6;
+        &:hover{
+            background-color: #ecf6fd;
+        }
+        &:first-child{
+            border-radius: 0;
+        }
+        &:last-child{
+            border-radius: 0;
+        }
+    }
+}

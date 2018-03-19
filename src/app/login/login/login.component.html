@@ -1,0 +1,72 @@
+<div class="login_wrapper">
+  <div class="login_container">
+    <div class="login_left">
+      <h1>用户登陆</h1>
+      <form nz-form  [formGroup]="validateForm">
+
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col>
+            <label>用户名</label>
+          </div>
+          <div nz-form-control nz-col>
+            <nz-input formControlName="userName" [nzPlaceHolder]="'电子邮箱或手机号码'" [nzSize]="'large'">
+            </nz-input>
+            <div nz-form-explain *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')">不能为空</div>
+          </div>
+        </div>
+
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col>
+            <label>密码</label>
+          </div>
+          <div nz-form-control nz-col>
+            <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'请输入您的密码'" [nzSize]="'large'">
+            </nz-input>
+            <div nz-form-explain *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required')">不能为空</div>
+          </div>
+        </div>
+
+        <div nz-form-item nz-row class="remember">
+          <div nz-form-control nz-col>
+            <label nz-checkbox formControlName="remember">
+              <span>记住账号和密码</span>
+            </label>
+          </div>
+        </div>
+        <button nz-button [nzType]="'primary'" (click)="_submitForm($event)" [nzLoading]="isLoading" [disabled]="!validateForm.valid">
+          <span *ngIf='!isLoading'>登陆</span>
+          <span *ngIf='isLoading'>正在登陆中</span>
+        </button>
+        <nz-modal
+          [nzVisible]="isVisible" 
+          [nzTitle]="'操作提示'" 
+          [nzContent]="modalContent" 
+          (nzOnCancel)="handleCancel($event)" 
+          [nzStyle]='modalStyle'
+          (nzOnOk)="handleOk($event)"
+        >
+          <ng-template #modalContent>
+
+            <div class="type_one">
+              <p class="desc">账号或者密码错误, 请重试</p>
+              <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="handleOk($event)">确定</button>
+            </div>
+          </ng-template>
+        </nz-modal>
+
+
+      </form>
+      
+    </div>
+    <div class="login_right">
+      <img src="/assets/images/login_bg.jpg">
+      <div class="login_title">
+        <h2 class="title">欢迎来到</h2>
+        <p>树华美术后台管理系统</p>
+      </div>
+    </div>
+  </div>
+  <div class="login_footer">
+    <p class="l_footer">Copyright @ 2017-2018，广州树华美术集团，All Rights Reserved</p>
+  </div>
+</div>

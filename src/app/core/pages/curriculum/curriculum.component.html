@@ -1,0 +1,43 @@
+<div class="SH_wrapper curriculum_wrapper">
+
+  <div class="SH_top_nav_wrapper top_nav_wrapper">
+    <app-nav NavTitle='课程列表' NavIcon='icon-computer'></app-nav>
+    
+    <app-breadcrumb [breadcrumbData]='navData'></app-breadcrumb>
+  </div>
+  <div class="SH_container_wrapper container_wrapper">
+      <nz-tabset>
+        <nz-tab>
+          <ng-template #nzTabHeading>全部</ng-template>
+          <div class="container">
+            <app-curriculum-list [CurriculumList]='DataList'></app-curriculum-list>
+          </div>
+        </nz-tab>
+        <nz-tab>
+          <ng-template #nzTabHeading>少儿</ng-template>
+          <div class="container">
+            <app-curriculum-list [CurriculumList]='DataList1'></app-curriculum-list>
+          </div>
+        </nz-tab>
+        <nz-tab>
+          <ng-template #nzTabHeading>高考</ng-template>
+          <div class="container">
+            333333333
+          </div>
+        </nz-tab>
+        <nz-tab>
+          <ng-template #nzTabHeading>国际</ng-template>
+          <div class="container">
+            444444444444
+          </div>
+        </nz-tab>
+        <nz-tab>
+          <ng-template #nzTabHeading>综合</ng-template>
+          <div class="container">
+            55555555555
+          </div>
+        </nz-tab>
+      </nz-tabset>
+    </div>
+
+</div>
