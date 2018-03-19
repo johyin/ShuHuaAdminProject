@@ -22,7 +22,11 @@
             &.ant-layout-sider-collapsed .ant-menu-submenu-title:after {
                 display: none;
             }
+<<<<<<< HEAD
             &.ant-layout-sider-collapsed .ant-menu > div .iconfont {
+=======
+            &.ant-layout-sider-collapsed .ant-menu > li .iconfont {
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
                 font-size: 22px;
                 margin-right: 0;
                 margin-left: 4px;
@@ -57,11 +61,17 @@
                     background-color: #fff;
                     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
                 }
+<<<<<<< HEAD
                 & a:hover,& .ant-menu-item-selected > a{
                     color: #2a60ea;
                 }
                 & > div{
                     margin-right: 1px;
+=======
+                & > li{
+                    margin-right: 1px;
+                    
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
                     .ant-menu-inline{
                         .ant-menu-item{
                             padding: 0 0 0 26px;
@@ -122,7 +132,11 @@
     }
 
 
+<<<<<<< HEAD
     // tab port
+=======
+
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
     nz-tabset{
         height: 100%;
         &,& .ant-tabs, & .ant-tabs-nav-container, & .ant-tabs-nav-wrap, & .ant-tabs-nav-scroll{
@@ -153,6 +167,16 @@
                 }
             }
         }
+<<<<<<< HEAD
     }
     
 }
+=======
+        .ant-tabs-content{
+            .container{
+            }
+        }
+    }
+
+}
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0

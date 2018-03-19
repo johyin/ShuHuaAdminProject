@@ -4,6 +4,7 @@
           <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
           <h1>树华美术管理系统</h1>
         </div>
+<<<<<<< HEAD
         <div nz-menu [nzMode]="isCollapsed?'vertical':'inline'">
           <div *ngFor="let menuItem of menuData; let ind = index">
             <div nz-submenu *ngIf="menuItem.menuList.length;else elseBlock" [nzOpen]='ind==jumpMark[0]'>
@@ -31,11 +32,37 @@
               <li nz-menu-item><a routerLink='/core/notice'>通知</a></li>
               <li nz-menu-item><a routerLink='/core/wages'>工资</a></li>
               <li nz-menu-item><a routerLink='/core/finance'>财务</a></li>
+=======
+        <ul nz-menu [nzMode]="isCollapsed?'vertical':'inline'">
+
+
+          <!-- <li nz-submenu *ngFor="let menuItem of menuData">
+            <span title>
+              <i class="iconfont" [ngClass]='menuItem.icon'></i><span class="nav-text">{{menuItem.title}}</span>
+            </span>
+            <ul *ngFor="let item of menuItem.menuList">
+              <li nz-menu-item><a [routerLink]='item.url'>{{item.title}}</a></li>
+            </ul>
+          </li> -->
+
+
+
+          <li nz-menu-item><span><i class="iconfont icon-computer"></i><span class="nav-text">工作台</span></span></li>
+          <li nz-submenu nzOpen='true'>
+            <span title><i class="iconfont icon-flag"></i><span class="nav-text">内部管理</span></span>
+            <ul>
+              <li nz-menu-item nzSelected='true'><a routerLink='/campus'>校区</a></li>
+              <li nz-menu-item><a routerLink='/stall'>员工</a></li>
+              <li nz-menu-item><a routerLink='/notice'>通知</a></li>
+              <li nz-menu-item>工资</li>
+              <li nz-menu-item>财务</li>
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
             </ul>
           </li>
           <li nz-submenu>
             <span title><i class="iconfont icon-createtask"></i><span class="nav-text">课程管理</span></span>
             <ul>
+<<<<<<< HEAD
               <li nz-menu-item><a routerLink='/core/curriculum'>课程</a></li>
               <li nz-menu-item><a routerLink='/core/classes'>班级</a></li>
             </ul>
@@ -43,6 +70,14 @@
           <li nz-menu-item><span><i class="iconfont icon-people"></i><span class="nav-text">招生员管理</span></span></li> -->
         </div>
 
+=======
+              <li nz-menu-item><a routerLink='/curriculum'>课程</a></li>
+              <li nz-menu-item><a routerLink='/classes'>班级</a></li>
+            </ul>
+          </li>
+          <li nz-menu-item><span><i class="iconfont icon-people"></i><span class="nav-text">招生员管理</span></span></li>
+        </ul>
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
   </nz-sider>
 
   <nz-layout>

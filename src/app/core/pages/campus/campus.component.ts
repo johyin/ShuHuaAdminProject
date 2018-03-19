@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Router } from '@angular/router';
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 
 @Component({
   selector: 'app-campus',
@@ -8,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CampusComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor( private router: Router ) {  }
   allcampusList = [
     {
@@ -1885,4 +1889,11 @@ export class CampusComponent implements OnInit {
   }
   _nzSelectChange(){
   }
+=======
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 }

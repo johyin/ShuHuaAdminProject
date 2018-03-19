@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CurriculumComponent implements OnInit {
 
   constructor() { }
+<<<<<<< HEAD
   DataList = [
     {
       index: 1,
@@ -263,6 +264,9 @@ export class CurriculumComponent implements OnInit {
       url: ''
     },
   ]
+=======
+
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
   ngOnInit() {
   }
 

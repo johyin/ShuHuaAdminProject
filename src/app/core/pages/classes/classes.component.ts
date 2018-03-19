@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassesComponent implements OnInit {
 
+<<<<<<< HEAD
   // 自定义显示项
   private AllCostom = false;
   private costomItem = [
@@ -377,6 +378,11 @@ export class ClassesComponent implements OnInit {
     } else {
       this.indeterminate = true;
     }
+=======
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
   }
 
 }

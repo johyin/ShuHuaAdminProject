@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 
 @Component({
   selector: 'app-campus-list',
@@ -8,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CampusListComponent implements OnInit {
 
+<<<<<<< HEAD
   @Input() CampusList:any = {};
   constructor( private router: Router ) { }
 
@@ -19,6 +24,11 @@ export class CampusListComponent implements OnInit {
     if(!this.CampusList.length){
       // this.router.navigate(['/home/campus'])
     }
+=======
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
   }
 
 }

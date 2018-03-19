@@ -21,8 +21,11 @@
                 line-height: 1;
                 margin-top: 6px;
                 margin-bottom: 40px;
+<<<<<<< HEAD
                 font-size: 30px;
                 color: #353840;
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
             }
             .ant-form-item{
                 margin-bottom: 16px;
@@ -55,6 +58,7 @@
                 bottom: 44px;
                 left: 40px;
                 color: #fff;
+<<<<<<< HEAD
                 & .title{
                     font-size: 35px;
                     color: #fff;
@@ -64,6 +68,17 @@
                 & > p{
                     font-size: 25px;
                     font-weight: 300;
+=======
+                & > h2{
+                    font-size: 32px;
+                    color: #fff;
+                    font-weight: 100;
+                    letter-spacing: 2px;
+                }
+                & > p{
+                    font-size: 20px;
+                    letter-spacing: 2px;
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
                 }
             }
         }
@@ -81,8 +96,11 @@
         margin-bottom: 10px;
         label{
             font-weight: bold;
+<<<<<<< HEAD
             font-size: 14px;
             color: #353840;
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
             &:after{
                 content: '';
             }
@@ -99,6 +117,7 @@
             line-height: 34px;
             text-indent: 16px;
             border-radius: 2px;
+<<<<<<< HEAD
             font-size: 14px;
             &, &::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder{
                 color: #838895;
@@ -106,3 +125,9 @@
         }
     }
 }
+=======
+        }
+    }
+}
+
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0

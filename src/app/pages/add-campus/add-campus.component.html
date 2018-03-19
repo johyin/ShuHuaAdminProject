@@ -147,17 +147,15 @@
 
             </div>
           </div>
-          <div nz-row>
-
-            <!-- 图文介绍 -->
-            <div nz-form-item class="con_item">
-              <div nz-form-label class="con_lable">
-                <span class="title">图文介绍</span>
-              </div>
-              <div nz-form-control class="con_input">
-                <ckeditor  formControlName="introduce" [(ngModel)]="ckeditorContent" debounce="500"></ckeditor>
-                输入的内容：<br> {{ ckeditorContent }}
-              </div>
+        </div>
+        <div nz-row>
+          <div class="con_item">
+            <div class="con_lable">
+              <span class="title">图文介绍</span>
+            </div>
+            <div class="con_input">
+              <ckeditor  formControlName="introduce" [(ngModel)]="ckeditorContent" debounce="500"  [config]="config"></ckeditor>
+              输入的内容：<br> {{ ckeditorContent }}
             </div>
           </div>
           <div nz-row [nzType]="'flex'" [nzJustify]="'center'">

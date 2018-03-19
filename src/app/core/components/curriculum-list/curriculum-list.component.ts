@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,6 +8,9 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 
 @Component({
   selector: 'app-curriculum-list',
@@ -14,6 +18,7 @@ import {
   styleUrls: ['./curriculum-list.component.scss']
 })
 export class CurriculumListComponent implements OnInit {
+<<<<<<< HEAD
   validateForm: FormGroup;
   private isVisible = false;
   private modalStyle: any = {
@@ -73,5 +78,12 @@ export class CurriculumListComponent implements OnInit {
 
 
 
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 
 }

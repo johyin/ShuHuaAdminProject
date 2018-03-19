@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+<<<<<<< HEAD
 
 import { MapOptions } from 'angular2-baidu-map'
 import { NzModalService } from 'ng-zorro-antd';
 
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -11,6 +14,7 @@ import { NzModalService } from 'ng-zorro-antd';
 })
 export class MapComponent implements OnInit {
 
+<<<<<<< HEAD
   private options: MapOptions;
   private currentModal;
   private coordinate;
@@ -26,10 +30,14 @@ export class MapComponent implements OnInit {
       enableScrollWheelZoom: true
     }
   }
+=======
+  constructor() { }
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   getMapCoordinate( opt: any ){
     console.log(`X::${opt.point.lng}====Y::${opt.point.lat}`);
   }
@@ -49,4 +57,6 @@ export class MapComponent implements OnInit {
       }
     });
   }
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 }

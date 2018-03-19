@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+<<<<<<< HEAD
 
 import { UploadFile  } from  '../../components/upload/interface'
 import {
@@ -10,6 +11,8 @@ import {
 
 
 
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 @Component({
   selector: 'app-add-campus',
   templateUrl: './add-campus.component.html',
@@ -17,6 +20,7 @@ import {
 })
 export class AddCampusComponent implements OnInit {
 
+<<<<<<< HEAD
   private ckeditorContent = '';
 
   // nav
@@ -117,6 +121,11 @@ export class AddCampusComponent implements OnInit {
       telephoneTow: [ null ],
       introduce: [ null ],
     });
+=======
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
   }
 
 }

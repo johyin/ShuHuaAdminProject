@@ -159,14 +159,19 @@
     // 对话框
     
     .ant-modal{
+<<<<<<< HEAD
     
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
         top: 50%;
         transform: translateY(-50%);
         .ant-modal-content{
             border-radius: 0;
+            
             & .ant-modal-header ,& .ant-modal-header .ant-modal-title{
                 height: 42px;
                 line-height: 42px;
+                font-weight: bold;
             }
             .ant-modal-header{
                 padding: 0 0 0 22px;
@@ -190,6 +195,7 @@
                         border-radius: 2px;
                     }
                 }
+<<<<<<< HEAD
                 .type_two{
                     padding: 30px;
                     .ant-btn{
@@ -201,12 +207,17 @@
                         }
                     }
                 }
+=======
+
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
             }
             .ant-modal-footer{
                 display: none;
             }
         }
     }
+<<<<<<< HEAD
+=======
 
 
     // 下拉菜单？
@@ -296,3 +307,4 @@
             padding: inherit;
         }
     }
+>>>>>>> 679bbadd82406532b611de81d9195863c4bc86bc

@@ -12,6 +12,7 @@ export class NoticeComponent implements OnInit {
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   navData = [
     {
       title: '信息通知',
@@ -26,4 +27,6 @@ export class NoticeComponent implements OnInit {
       url: ''
     },
   ]
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 }

@@ -4,16 +4,22 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+<<<<<<< HEAD
 import { Router } from '@angular/router'
 
 
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+<<<<<<< HEAD
 
+=======
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
   validateForm: FormGroup;
   private isLoading = false;
   private isVisible = false;
@@ -23,8 +29,12 @@ export class LoginComponent implements OnInit {
     width: '280px'
   }
 
+<<<<<<< HEAD
   constructor(private fb: FormBuilder, private router: Router) {
 
+=======
+  constructor(private fb: FormBuilder) {
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
   }
 
   ngOnInit() {
@@ -58,6 +68,7 @@ export class LoginComponent implements OnInit {
     }
     this.isLoading = true;
 
+<<<<<<< HEAD
     //模拟登陆成功
     setTimeout(_ => {
       this.isLoading = true;
@@ -71,6 +82,14 @@ export class LoginComponent implements OnInit {
 
     //   this.showModal();
     // }, 1000);
+=======
+    //模拟登陆失败
+    setTimeout(_ => {
+      this.isLoading = false;
+
+      this.showModal();
+    }, 1000);
+>>>>>>> e2e5a04b70305eadf9aecbfe2f89cc92dc1a8ee0
   };
   handleCancel(){
     this.handleOk();
